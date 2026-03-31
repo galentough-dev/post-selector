@@ -119,7 +119,7 @@ with st.sidebar:
     with col2:
         length = st.number_input("Length (ft)", value=250, min_value=10, max_value=500)
         spacing = st.number_input(
-            "Post Spacing (ft)", value=8, min_value=2, max_value=12, step=0.5
+            "Post Spacing (ft)", value=8.0, min_value=2.0, max_value=12.0, step=0.5
         )
 
     slope = st.slider("Roof Slope (x:12)", min_value=0, max_value=12, value=4)
