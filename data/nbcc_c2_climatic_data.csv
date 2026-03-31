@@ -1,0 +1,680 @@
+label,Ss,Sr,q10,q50
+"Athabasca, AB",1.5,0.1,0.28,0.36
+"Banff, AB",3.6,0.1,0.25,0.32
+"Barrhead, AB",1.7,0.1,0.34,0.44
+"Beaverlodge, AB",2.4,0.1,0.28,0.36
+"Brooks, AB",1.2,0.1,0.4,0.52
+"Calgary, AB",1.1,0.1,0.37,0.48
+"Campsie, AB",1.7,0.1,0.34,0.44
+"Camrose, AB",2,0.1,0.3,0.39
+"Canmore, AB",3.5,0.1,0.29,0.37
+"Cardston, AB",1.5,0.1,0.56,0.72
+"Claresholm, AB",1.3,0.1,0.45,0.58
+"Cold Lake, AB",1.7,0.1,0.29,0.38
+"Coleman, AB",2.7,0.3,0.48,0.63
+"Coronation, AB",2.2,0.1,0.29,0.37
+"Cowley, AB",1.6,0.1,0.78,1.01
+"Drumheller, AB",1.2,0.1,0.34,0.44
+"Edmonton, AB",1.7,0.1,0.35,0.45
+"Edson, AB",2.1,0.1,0.36,0.46
+"Embarras Portage, AB",1.9,0.1,0.29,0.37
+"Fairview, AB",2.6,0.1,0.27,0.35
+"Fort MacLeod, AB",1.2,0.1,0.53,0.68
+"Fort McMurray, AB",1.4,0.1,0.27,0.35
+"Fort Saskatchewan, AB",1.6,0.1,0.33,0.43
+"Fort Vermilion, AB",2.1,0.1,0.23,0.3
+"Grande Prairie, AB",2.2,0.1,0.33,0.43
+"Habay, AB",2.4,0.1,0.23,0.3
+"Hardisty, AB",1.7,0.1,0.28,0.36
+"High River, AB",1.3,0.1,0.5,0.65
+"Hinton, AB",2.9,0.1,0.36,0.46
+"Jasper, AB",3.3,0.1,0.25,0.32
+"Keg River, AB",2.4,0.1,0.23,0.3
+"Lac la Biche, AB",1.6,0.1,0.28,0.36
+"Lacombe, AB",2.1,0.1,0.31,0.4
+"Lethbridge, AB",1.2,0.1,0.51,0.66
+"Manning, AB",2.3,0.1,0.23,0.3
+"Medicine Hat, AB",1.1,0.1,0.37,0.48
+"Peace River, AB",2.2,0.1,0.25,0.32
+"Pincher Creek, AB",1.5,0.1,0.75,0.96
+"Ranfurly, AB",1.9,0.1,0.28,0.36
+"Red Deer, AB",2,0.1,0.31,0.4
+"Rocky Mountain House, AB",1.9,0.1,0.28,0.36
+"Slave Lake, AB",1.9,0.1,0.29,0.37
+"Stettler, AB",2.2,0.1,0.28,0.36
+"Stony Plain, AB",1.7,0.1,0.35,0.45
+"Suffield, AB",1.3,0.1,0.38,0.49
+"Taber, AB",1.2,0.1,0.48,0.63
+"Turner Valley, AB",1.4,0.1,0.5,0.65
+"Valleyview, AB",2.3,0.1,0.33,0.42
+"Vegreville, AB",1.9,0.1,0.28,0.36
+"Vermilion, AB",1.7,0.1,0.28,0.36
+"Wagner, AB",1.9,0.1,0.29,0.37
+"Wainwright, AB",2,0.1,0.28,0.36
+"Wetaskiwin, AB",2,0.1,0.3,0.39
+"Whitecourt, AB",1.9,0.1,0.29,0.37
+"Wimborne, AB",1.6,0.1,0.31,0.4
+"100 Mile House, BC",2.6,0.3,0.27,0.35
+"Abbotsford, BC",2,0.3,0.34,0.44
+"Agassiz, BC",2.4,0.7,0.36,0.47
+"Alberni, BC",3,0.4,0.25,0.32
+"Ashcroft, BC",1.7,0.1,0.29,0.38
+"Barnfield, BC",1,0.4,0.39,0.5
+"Beatton River, BC",3.3,0.1,0.23,0.3
+"Bella Bella, BC",2.6,0.8,0.39,0.5
+"Bella Coola, BC",5.5,0.8,0.3,0.39
+"Burnaby (Simon Fraser Univ.), BC",2.9,0.7,0.36,0.47
+"Burns Lake, BC",3.4,0.2,0.3,0.39
+"Cache Creek, BC",1.7,0.2,0.3,0.39
+"Campbell River, BC",3.3,0.4,0.4,0.52
+"Carmi, BC",3.9,0.2,0.29,0.38
+"Castlegar, BC",4.2,0.1,0.27,0.34
+"Chetwynd, BC",2.4,0.2,0.31,0.4
+"Chilliwack, BC",2.2,0.3,0.36,0.47
+"Cloverdale, BC",2.5,0.2,0.34,0.44
+"Comox, BC",2.6,0.4,0.4,0.52
+"Courtenay, BC",2.6,0.4,0.4,0.52
+"Cranbrook, BC",3,0.2,0.25,0.33
+"Crescent Valley, BC",4.2,0.1,0.25,0.33
+"Crofton, BC",1.8,0.2,0.31,0.4
+"Dawson Creek, BC",2.5,0.2,0.31,0.4
+"Dease Lake, BC",2.6,0.1,0.23,0.3
+"Dog Creek, BC",1.8,0.2,0.27,0.35
+"Duncan, BC",1.8,0.4,0.3,0.39
+"Elko, BC",3.6,0.2,0.31,0.4
+"Fernie, BC",4.5,0.2,0.31,0.4
+"Fort Nelson, BC",2.4,0.1,0.23,0.3
+"Fort St. John, BC",2.8,0.1,0.3,0.39
+"Glacier, BC",9.4,0.2,0.25,0.32
+"Gold River, BC",2.6,0.6,0.25,0.32
+"Golden, BC",3.7,0.2,0.27,0.35
+"Grand Forks, BC",2.8,0.1,0.31,0.4
+"Greenwood, BC",4,0.1,0.31,0.4
+"Haney, BC",2.4,0.2,0.34,0.44
+"Hope, BC",2.8,0.7,0.48,0.63
+"Jordan River, BC",1.2,0.4,0.43,0.55
+"Kamloops, BC",1.8,0.2,0.31,0.4
+"Kaslo, BC",2.8,0.1,0.24,0.31
+"Kelowna, BC",1.7,0.1,0.31,0.4
+"Kimberley, BC",3,0.2,0.25,0.33
+"Kitimat Plant, BC",5.5,0.8,0.37,0.48
+"Kitimat Townsite, BC",6.5,0.8,0.37,0.48
+"Ladner, BC",1.3,0.2,0.36,0.46
+"ladysmith, BC",2.4,0.4,0.31,0.4
+"langford, BC",1.8,0.3,0.31,0.4
+"Langley, BC",2.4,0.2,0.34,0.44
+"lillooet, BC",2.1,0.1,0.34,0.44
+"lytton, BC",2.8,0.3,0.33,0.43
+"Mackenzie, BC",5.1,0.2,0.25,0.32
+"Masse!, BC",1.8,0.4,0.48,0.61
+"McBride, BC",4.3,0.2,0.27,0.35
+"Mcleod Lake, BC",4.1,0.2,0.25,0.32
+"Merritt, BC",1.8,0.3,0.34,0.44
+"Mission City, BC",2.4,0.3,0.33,0.43
+"Montrose, BC",4.1,0.1,0.27,0.35
+"Nakusp, BC",4.4,0.1,0.25,0.33
+"Nanaimo, BC",2.3,0.4,0.39,0.5
+"Nelson, BC",4.2,0.1,0.25,0.33
+"New Westminster, BC",2.3,0.2,0.34,0.44
+"North Vancouver, BC",3,0.3,0.35,0.45
+"Ocean Falls, BC",3.9,0.8,0.46,0.59
+"Osoyoos, BC",1.1,0.1,0.31,0.4
+"Parksville, BC",2.4,0.4,0.39,0.5
+"Penticton, BC",1.3,0.1,0.35,0.45
+"Port Alberni, BC",3,0.4,0.25,0.32
+"Port Alice, BC",1.1,0.4,0.25,0.32
+"Port Hardy, BC",0.9,0.4,0.4,0.52
+"Port McNeill, BC",1.1,0.4,0.4,0.52
+"Port Renfrew, BC",1.1,0.4,0.4,0.52
+"Powell River, BC",1.9,0.4,0.39,0.51
+"Prince George, BC",3.4,0.2,0.29,0.37
+"Prince Rupert, BC",1.9,0.4,0.42,0.54
+"Princeton, BC",2.9,0.6,0.28,0.36
+"Qualicum Beach, BC",2.2,0.4,0.41,0.53
+"Queen Charlotte City, BC",1.8,0.4,0.48,0.61
+"Quesnel, BC",3,0.1,0.24,0.31
+"Revelstoke, BC",5.8,0.1,0.25,0.32
+"Richmond, BC",1.5,0.2,0.35,0.45
+"Salmon Arm, BC",3.5,0.1,0.3,0.39
+"Sandspit, BC",1.8,0.4,0.6,0.78
+"Sechelt, BC",2.2,0.4,0.37,0.48
+"Sidney, BC",1.1,0.2,0.33,0.42
+"Smith River, BC",2.8,0.1,0.23,0.3
+"Smithers, BC",3.2,0.2,0.31,0.4
+"Sooke, BC",1.3,0.3,0.37,0.48
+"Squamish, BC",3.2,0.7,0.39,0.5
+"Stewart, BC",7.9,0.8,0.28,0.36
+"Surrey (88 Ave & 156 St.), BC",2.4,0.3,0.34,0.44
+"Tahsis, BC",1.1,0.4,0.26,0.34
+"Taylor, BC",2.3,0.1,0.31,0.4
+"Terrace, BC",5.4,0.6,0.28,0.36
+"Totino, BC",1.1,0.4,0.53,0.68
+"Trail, BC",4.1,0.1,0.27,0.35
+"Ucluelet, BC",1,0.4,0.53,0.68
+"Vancouver (City Hall), BC",1.8,0.2,0.35,0.45
+"Vancouver (Granville & 41 Ave), BC",1.9,0.3,0.35,0.45
+"Vernon, BC",2.2,0.1,0.31,0.4
+"Victoria, BC",1.1,0.2,0.44,0.57
+"Victoria (Gonzales Hts), BC",1.5,0.3,0.44,0.57
+"Victoria (Mt Tolmie), BC",2.1,0.3,0.48,0.63
+"West Vancouver, BC",2.4,0.2,0.37,0.48
+"Whistler, BC",9.5,0.9,0.25,0.32
+"White Rock, BC",2,0.2,0.34,0.44
+"Williams Lake, BC",2.4,0.2,0.27,0.35
+"Youbou, BC",3.9,0.7,0.25,0.32
+"Beausejour, MB",1.9,0.2,0.32,0.41
+"Boissevain, MB",2.2,0.2,0.4,0.52
+"Brandon, MB",2.1,0.2,0.38,0.49
+"Churchill, MB",2.8,0.2,0.43,0.55
+"Dauphin, MB",1.9,0.2,0.31,0.4
+"Flin Flon, MB",2.2,0.2,0.27,0.35
+"Gimli, MB",1.9,0.2,0.31,0.4
+"Island Lake, MB",2.6,0.2,0.29,0.37
+"Lac du Bonnet, MB",1.9,0.2,0.29,0.37
+"Lynn Lake, MB",2.4,0.2,0.29,0.37
+"Morden, MB",2.2,0.2,0.4,0.52
+"Neepawa, MB",2.2,0.2,0.34,0.44
+"Pine Falls, MB",1.9,0.2,0.3,0.39
+"Portage la Prairie, MB",2.1,0.2,0.36,0.46
+"Rivers, MB",2.1,0.2,0.36,0.46
+"Sandilands, MB",2.2,0.2,0.31,0.4
+"Selkirk, MB",1.9,0.2,0.32,0.41
+"Split Lake, MB",2.5,0.2,0.3,0.39
+"Steinbach, MB",2,0.2,0.31,0.4
+"Swan River, MB",2,0.2,0.27,0.35
+"The Pas, MB",2.1,0.2,0.29,0.37
+"Thompson, MB",2.4,0.2,0.28,0.36
+"Virden, MB",2,0.2,0.36,0.46
+"Winnipeg, MB",1.9,0.2,0.35,0.45
+"Alma, NB",2.3,0.6,0.37,0.48
+"Bathurst, NB",3.5,0.6,0.37,0.48
+"Campbellton, NB",3.6,0.4,0.35,0.45
+"Edmundston, NB",3.4,0.6,0.29,0.38
+"Fredericton, NB",3.1,0.6,0.29,0.38
+"Gagetown, NB",2.8,0.6,0.31,0.4
+"Grand Falls, NB",3.6,0.6,0.29,0.38
+"Miramichi, NB",3.4,0.6,0.32,0.41
+"Moncton, NB",3,0.6,0.39,0.5
+"Oromocto, NB",3,0.6,0.3,0.39
+"Sackville, NB",2.5,0.6,0.38,0.49
+"Saint Andrews, NB",2.3,0.6,0.35,0.45
+"Saint George, NB",2.3,0.6,0.35,0.45
+"Saint John, NB",2.3,0.6,0.41,0.53
+"Shippagan, NB",3.4,0.6,0.48,0.63
+"St. Stephen, NB",2.5,0.6,0.33,0.42
+"Woodstock, NB",3.1,0.6,0.29,0.37
+"Argentia, NL",2.4,0.7,0.58,0.75
+"Bonavista, NL",2.8,0.6,0.65,0.84
+"Buchans, NL",4.7,0.6,0.47,0.6
+"Cape Harrison, NL",6.3,0.4,0.47,0.6
+"Cape Race, NL",2.3,0.7,0.81,1.05
+"Channel-Port aux Basques, NL",3,0.7,0.6,0.78
+"Corner Brook, NL",3.7,0.6,0.43,0.55
+"Gander, NL",3.7,0.6,0.47,0.6
+"Grand Bank, NL",2.4,0.7,0.57,0.74
+"Grand Falls, NL",3.4,0.6,0.47,0.6
+"Happy Valley-Goose Bay, NL",5.3,0.4,0.33,0.42
+"Labrador City, NL",4.3,0.3,0.31,0.4
+"St. Anthony, NL",5.1,0.6,0.67,0.87
+"St. John's, NL",2.9,0.7,0.6,0.78
+"Stephenville, NL",3.5,0.6,0.45,0.58
+"Twin Falls, NL",4.6,0.4,0.31,0.4
+"Wabana, NL",3,0.7,0.58,0.75
+"Wabush, NL",4.3,0.3,0.31,0.4
+"Amherst, NS",2.4,0.6,0.37,0.48
+"Antigonish, NS",2.1,0.6,0.42,0.54
+"Bridgewater, NS",1.9,0.6,0.43,0.55
+"Canso, NS",1.7,0.6,0.48,0.61
+"Dartmouth, NS",1.6,0.6,0.45,0.58
+"Debert, NS",2.1,0.6,0.37,0.48
+"Digby, NS",2.2,0.6,0.43,0.55
+"Greenwood (CFB), NS",2.7,0.6,0.42,0.54
+"Halifax, NS",1.9,0.6,0.45,0.58
+"Kentville, NS",2.4,0.6,0.42,0.54
+"Liverpool, NS",1.7,0.6,0.48,0.61
+"Lockeport, NS",1.4,0.6,0.47,0.6
+"Louisburg, NS",2.1,0.7,0.5,0.65
+"Lunenburg, NS",1.9,0.6,0.48,0.61
+"New Glasgow, NS",2.2,0.6,0.43,0.55
+"North Sydney, NS",2.4,0.6,0.46,0.59
+"Pictou, NS",2.2,0.6,0.43,0.55
+"Port Hawkesbury, NS",2.1,0.6,0.57,0.74
+"Springhill, NS",3.1,0.6,0.37,0.48
+"Stewiacke, NS",1.8,0.6,0.39,0.5
+"Sydney, NS",2.3,0.6,0.46,0.59
+"Tatamagouche, NS",2.2,0.6,0.43,0.55
+"Truro, NS",2,0.6,0.37,0.48
+"Wolfville, NS",2.4,0.6,0.42,0.54
+"Yarmouth, NS",1.8,0.6,0.43,0.56
+"Aklavik, NT",2.3,0.1,0.37,0.48
+"Echo Bay / Port Radium, NT",3,0.1,0.41,0.53
+"Fort Good Hope, NT",2.9,0.1,0.34,0.44
+"Fort McPherson, NT",2.3,0.1,0.31,0.4
+"Fort Providence, NT",2.4,0.1,0.27,0.35
+"Fort Resolution, NT",2.3,0.1,0.3,0.39
+"Fort Simpson, NT",2.3,0.1,0.3,0.39
+"Fort Smith, NT",2.3,0.2,0.3,0.39
+"Hay River, NT",2.4,0.1,0.27,0.35
+"Holman!Uiukhaqtuuq, NT",2.1,0.1,0.66,0.86
+"lnuvik, NT",2.3,0.1,0.37,0.48
+"Mould Bay, NT",1.5,0.1,0.45,0.58
+"Norman Wells, NT",2.7,0.1,0.34,0.44
+"Rae-Edzo, NT",2.3,0.1,0.36,0.47
+"Tungsten, NT",4.3,0.1,0.34,0.44
+"Wrigley, NT",2.8,0.1,0.3,0.39
+"Yellowknife, NT",2.2,0.1,0.36,0.47
+"Alert, NU",1.6,0.1,0.58,0.75
+"Arctic Bay, NU",2.1,0.1,0.43,0.55
+"Arviat / Eskimo Point, NU",2.9,0.2,0.45,0.58
+"Baker Lake, NU",2.9,0.2,0.42,0.54
+"Cambridge Bay / lqaluktuuttiaq, NU",1.6,0.1,0.42,0.54
+"Chesterfield lnlet / lgluligaarjuk, NU",3,0.2,0.43,0.56
+"Clyde River / Kanngiqtugaapik, NU",3.5,0.2,0.56,0.72
+"Coppermine (Kugluktuk), NU",2.6,0.1,0.36,0.46
+"Coral Harbour / Salliq, NU",3.8,0.2,0.54,0.69
+"Eureka, NU",1.6,0.1,0.43,0.55
+"lqaluit, NU",2.9,0.2,0.45,0.58
+"lsachsen, NU",1.6,0.1,0.47,0.6
+"Nottingham Island, NU",4.5,0.2,0.6,0.78
+"Rankin Inlet (Kangiqiniq), NU",3,0.2,0.47,0.6
+"Resolute, NU",1.7,0.1,0.54,0.69
+"Resolution Island, NU",5.2,0.2,0.95,1.23
+"Ailsa Craig, ON",2.2,0.4,0.39,0.5
+"Ajax, ON",1,0.4,0.37,0.48
+"Alexandria, ON",2.4,0.4,0.31,0.4
+"Alliston, ON",2,0.4,0.28,0.36
+"Almonte, ON",2.5,0.4,0.32,0.41
+"Armstrong, ON",2.7,0.4,0.23,0.3
+"Arnprior, ON",2.5,0.4,0.29,0.37
+"Atikokan, ON",2.4,0.3,0.23,0.3
+"Attawapiskat, ON",2.8,0.3,0.32,0.41
+"Aurora, ON",2,0.4,0.34,0.44
+"Bancroft, ON",3.1,0.4,0.25,0.32
+"Barrie, ON",2.5,0.4,0.28,0.36
+"Barriefield, ON",2.1,0.4,0.36,0.47
+"Beaverton, ON",2.2,0.4,0.28,0.36
+"Belleville, ON",1.7,0.4,0.33,0.43
+"Belmont, ON",1.7,0.4,0.36,0.47
+"Bracebridge, ON",3.1,0.4,0.27,0.35
+"Bradford, ON",2.1,0.4,0.28,0.36
+"Brampton, ON",1.3,0.4,0.34,0.44
+"Brantford, ON",1.3,0.4,0.33,0.42
+"Brighton, ON",1.6,0.4,0.37,0.48
+"Brockville, ON",2.2,0.4,0.34,0.44
+"Burk's Falls, ON",2.7,0.4,0.27,0.35
+"Burlington, ON",0.9,0.4,0.36,0.46
+"Cambridge, ON",1.6,0.4,0.28,0.36
+"Campbellford, ON",1.7,0.4,0.32,0.41
+"Cannington, ON",2.2,0.4,0.28,0.36
+"Carleton Place, ON",2.5,0.4,0.32,0.41
+"Cavan, ON",2,0.4,0.34,0.44
+"Centralia, ON",2.3,0.4,0.38,0.49
+"CFB Borden, ON",2.2,0.4,0.28,0.36
+"Chapleau, ON",4,0.4,0.23,0.3
+"Chatham, ON",1,0.4,0.33,0.43
+"Chesley, ON",2.8,0.4,0.37,0.48
+"Clinton, ON",2.6,0.4,0.38,0.49
+"Coboconk, ON",2.5,0.4,0.27,0.35
+"Cobourg, ON",1.2,0.4,0.38,0.49
+"Cochrane, ON",2.8,0.3,0.27,0.35
+"Colborne, ON",1.6,0.4,0.38,0.49
+"Collingwood, ON",2.7,0.4,0.3,0.39
+"Cornwall, ON",2.2,0.4,0.32,0.41
+"Corunna, ON",1,0.4,0.36,0.47
+"Deep River, ON",2.5,0.4,0.27,0.35
+"Deseronto, ON",1.9,0.4,0.33,0.43
+"Dorchester, ON",1.9,0.4,0.36,0.47
+"Dorion, ON",2.8,0.4,0.3,0.39
+"Dresden, ON",1,0.4,0.33,0.43
+"Dryden, ON",2.4,0.3,0.23,0.3
+"Dundalk, ON",3.4,0.4,0.33,0.42
+"Dunnville, ON",2,0.4,0.36,0.46
+"Durham, ON",2.8,0.4,0.34,0.44
+"Dutton, ON",1.3,0.4,0.36,0.47
+"Earlton, ON",2.6,0.4,0.35,0.45
+"Edison, ON",2.4,0.3,0.24,0.31
+"Elliot Lake, ON",2.9,0.4,0.29,0.38
+"Elmvale, ON",2.6,0.4,0.28,0.36
+"Embro, ON",2,0.4,0.37,0.48
+"Englehart, ON",2.5,0.4,0.32,0.41
+"Espanola, ON",2.3,0.4,0.33,0.42
+"Etobicoke, ON",1.1,0.4,0.34,0.44
+"Exeter, ON",2.4,0.4,0.38,0.49
+"Fenelon Falls, ON",2.3,0.4,0.28,0.36
+"Fergus, ON",2.2,0.4,0.28,0.36
+"Forest, ON",2,0.4,0.37,0.48
+"Fort Erie, ON",2.6,0.4,0.36,0.46
+"Fort Erie (Ridgeway), ON",2.5,0.4,0.36,0.46
+"Fort Frances, ON",2.3,0.3,0.24,0.31
+"Gananoque, ON",2.1,0.4,0.36,0.47
+"Geraldton, ON",2.9,0.4,0.23,0.3
+"Glencoe, ON",1.5,0.4,0.33,0.43
+"Goderich, ON",2.4,0.4,0.43,0.55
+"Gore Bay, ON",2.6,0.4,0.34,0.44
+"Graham, ON",2.6,0.3,0.23,0.3
+"Gravenhurst (Muskoka Airport), ON",2.7,0.4,0.28,0.36
+"Grimsby, ON",0.9,0.4,0.36,0.46
+"Guelph, ON",1.9,0.4,0.28,0.36
+"Guthrie, ON",2.5,0.4,0.28,0.36
+"Haileybury, ON",2.4,0.4,0.34,0.44
+"Haldimand (Caledonia), ON",1.2,0.4,0.34,0.44
+"Haldimand (Hagersville), ON",1.3,0.4,0.36,0.46
+"Haliburton, ON",2.9,0.4,0.27,0.35
+"Halton Hills (Georgetown), ON",1.4,0.4,0.29,0.37
+"Hamilton, ON",0.9,0.4,0.36,0.46
+"Hanover, ON",2.6,0.4,0.37,0.48
+"Hastings, ON",2,0.4,0.32,0.41
+"Hawkesbury, ON",2.3,0.4,0.32,0.41
+"Hearst, ON",2.8,0.3,0.23,0.3
+"Honey Harbour, ON",2.7,0.4,0.3,0.39
+"Hornepayne, ON",3.6,0.4,0.23,0.3
+"Huntsville, ON",2.9,0.4,0.27,0.35
+"Ingersoll, ON",1.7,0.4,0.37,0.48
+"Iroquois Falls, ON",2.9,0.3,0.29,0.37
+"Jellicoe, ON",2.7,0.4,0.23,0.3
+"Kapuskasing, ON",2.8,0.3,0.24,0.31
+"Kemptville, ON",2.3,0.4,0.32,0.41
+"Kenora, ON",2.3,0.3,0.24,0.31
+"Killaloe, ON",2.7,0.4,0.27,0.35
+"Kincardine, ON",2.6,0.4,0.43,0.55
+"Kingston, ON",2.1,0.4,0.36,0.47
+"Kinmount, ON",2.7,0.4,0.27,0.35
+"Kirkland Lake, ON",2.9,0.3,0.3,0.39
+"Kitchener, ON",2,0.4,0.29,0.37
+"Kitchenuhmaykoosib (Big Trout Lake), ON",3.2,0.2,0.33,0.42
+"Lakefield, ON",2.2,0.4,0.29,0.38
+"Lansdowne House, ON",2.9,0.2,0.25,0.32
+"Leamington, ON",0.8,0.4,0.36,0.47
+"Lindsay, ON",2.3,0.4,0.29,0.38
+"Lion's Head, ON",2.7,0.4,0.37,0.48
+"Listowel, ON",2.6,0.4,0.36,0.47
+"London, ON",1.9,0.4,0.36,0.47
+"Lucan, ON",2.3,0.4,0.39,0.5
+"Maitland, ON",2.2,0.4,0.34,0.44
+"Markdale, ON",3.4,0.4,0.32,0.41
+"Markham, ON",1.3,0.4,0.34,0.44
+"Martin, ON",2.6,0.3,0.23,0.3
+"Matheson, ON",2.8,0.3,0.3,0.39
+"Mattawa, ON",2.1,0.4,0.25,0.32
+"Midland, ON",2.7,0.4,0.3,0.39
+"Milton, ON",1.3,0.4,0.33,0.43
+"Milverton, ON",2.4,0.4,0.33,0.43
+"Minden, ON",2.7,0.4,0.27,0.35
+"Mississauga, ON",1.1,0.4,0.34,0.44
+"Mississauga (Lester B. Pearson Airport), ON",1.1,0.4,0.34,0.44
+"Mississauga (Port Credit), ON",0.9,0.4,0.37,0.48
+"Mitchell, ON",2.4,0.4,0.37,0.48
+"Moosonee, ON",2.2,0.3,0.27,0.35
+"Morrisburg, ON",2.3,0.4,0.32,0.41
+"Mount Forest, ON",2.7,0.4,0.32,0.41
+"Nakina, ON",2.8,0.4,0.23,0.3
+"Nanticoke (Jarvis), ON",1.4,0.4,0.37,0.48
+"Nanticoke (Port Dover), ON",1.2,0.4,0.37,0.48
+"Napanee, ON",1.9,0.4,0.33,0.43
+"New Liskeard, ON",2.3,0.4,0.33,0.43
+"Newcastle, ON",1.5,0.4,0.37,0.48
+"Newcastle (Bowmanville), ON",1.4,0.4,0.37,0.48
+"Newmarket, ON",2,0.4,0.29,0.38
+"Niagara Falls, ON",2,0.4,0.33,0.43
+"North Bay, ON",2.2,0.4,0.27,0.34
+"North York, ON",1.2,0.4,0.34,0.44
+"Norwood, ON",2.1,0.4,0.32,0.41
+"Oakville, ON",0.9,0.4,0.36,0.47
+"Orangeville, ON",2.3,0.4,0.28,0.36
+"Orillia, ON",2.4,0.4,0.28,0.36
+"Oshawa, ON",1.4,0.4,0.37,0.48
+"Ottawa (Barrhaven), ON",2.4,0.4,0.32,0.41
+"Ottawa (City Hall), ON",2.4,0.4,0.32,0.41
+"Ottawa (Kanata), ON",2.5,0.4,0.32,0.41
+"Ottawa (M.C. lnt'l Airport), ON",2.4,0.4,0.32,0.41
+"Ottawa (Orleans), ON",2.4,0.4,0.32,0.41
+"Owen Sound, ON",2.8,0.4,0.37,0.48
+"Pagwa River, ON",2.4,0.4,0.23,0.3
+"Paris, ON",1.4,0.4,0.33,0.42
+"Parkhill, ON",2.1,0.4,0.39,0.5
+"Parry Sound, ON",2.8,0.4,0.3,0.39
+"Pelham (Fonthill), ON",2.3,0.4,0.33,0.42
+"Pembroke, ON",2.5,0.4,0.27,0.35
+"Penetanguishene, ON",2.8,0.4,0.3,0.39
+"Perth, ON",2.3,0.4,0.32,0.41
+"Petawawa, ON",2.6,0.4,0.27,0.35
+"Peterborough, ON",2,0.4,0.32,0.41
+"Petrolia, ON",1.3,0.4,0.36,0.47
+"Pickering (Dunbarton), ON",1,0.4,0.37,0.48
+"Picton, ON",2,0.4,0.38,0.49
+"Plattsville, ON",1.9,0.4,0.33,0.42
+"Point Alexander, ON",2.5,0.4,0.27,0.35
+"Port Burwell, ON",1.2,0.4,0.36,0.47
+"Port Colborne, ON",2.3,0.4,0.36,0.46
+"Port Elgin, ON",2.8,0.4,0.43,0.55
+"Port Hope, ON",1.2,0.4,0.37,0.48
+"Port Perry, ON",2.4,0.4,0.34,0.44
+"Port Stanley, ON",1.2,0.4,0.36,0.47
+"Prescott, ON",2.2,0.4,0.34,0.44
+"Princeton, ON",1.5,0.4,0.33,0.42
+"Raith, ON",2.7,0.4,0.23,0.3
+"Rayside-Balfour (Chelmsford), ON",2.5,0.4,0.35,0.45
+"Red Lake, ON",2.4,0.3,0.23,0.3
+"Renfrew, ON",2.5,0.4,0.27,0.35
+"Richmond Hill, ON",1.5,0.4,0.34,0.44
+"Rockland, ON",2.4,0.4,0.31,0.4
+"Sarnia, ON",1.1,0.4,0.36,0.47
+"Sault Ste. Marie, ON",3.1,0.4,0.34,0.44
+"Scarborough, ON",1.2,0.4,0.36,0.47
+"Schreiber, ON",3.3,0.4,0.3,0.39
+"Seaforth, ON",2.5,0.4,0.37,0.48
+"Shelburne, ON",3.1,0.4,0.31,0.4
+"Simcoe, ON",1.3,0.4,0.35,0.45
+"Sioux Lookout, ON",2.4,0.3,0.23,0.3
+"Smithville, ON",1.5,0.4,0.33,0.42
+"Smooth Rock Falls, ON",2.7,0.3,0.25,0.32
+"Smtthsfalls, ON",2.3,0.4,0.32,0.41
+"South River, ON",2.8,0.4,0.27,0.35
+"Southampton, ON",2.7,0.4,0.41,0.53
+"St. Catharines, ON",1,0.4,0.36,0.46
+"St. Mary's, ON",2.2,0.4,0.36,0.47
+"St. Thomas, ON",1.4,0.4,0.36,0.47
+"Stirling, ON",1.7,0.4,0.31,0.4
+"Stratford, ON",2.3,0.4,0.35,0.45
+"Strathroy, ON",1.9,0.4,0.36,0.47
+"Sturgeon Falls, ON",2.2,0.4,0.27,0.35
+"Sudbury, ON",2.5,0.4,0.36,0.46
+"Sundridge, ON",2.8,0.4,0.27,0.35
+"Tavistock, ON",2.1,0.4,0.35,0.45
+"Temagami, ON",2.6,0.4,0.29,0.37
+"Thamesford, ON",1.9,0.4,0.37,0.48
+"Thedford, ON",2.1,0.4,0.39,0.5
+"Thunder Bay, ON",2.9,0.4,0.3,0.39
+"Tillsonburg, ON",1.3,0.4,0.34,0.44
+"Timmins, ON",3.1,0.3,0.27,0.35
+"Timmins (Porcupine), ON",2.9,0.3,0.29,0.37
+"Toronto (City Hall), ON",0.9,0.4,0.34,0.44
+"Trenton, ON",1.6,0.4,0.36,0.47
+"Trout Creek, ON",2.7,0.4,0.27,0.35
+"Uxbridge, ON",2.4,0.4,0.33,0.42
+"Vaughan (Woodbridge), ON",1.1,0.4,0.34,0.44
+"Vittoria, ON",1.3,0.4,0.36,0.47
+"Walford, ON",1.9,0.4,0.36,0.47
+"Walkerton, ON",2.7,0.4,0.39,0.5
+"Wallaceburg, ON",0.9,0.4,0.35,0.45
+"Waterloo, ON",2,0.4,0.29,0.37
+"Wawa, ON",4.1,0.4,0.3,0.39
+"Weiland, ON",2.2,0.4,0.33,0.43
+"West Lorne, ON",1.3,0.4,0.36,0.47
+"Whitby, ON",1.2,0.4,0.37,0.48
+"Whitby (Brooklin), ON",1.9,0.4,0.35,0.45
+"White River, ON",4.5,0.4,0.23,0.3
+"Wiarton, ON",2.7,0.4,0.37,0.48
+"Windsor, ON",0.8,0.4,0.36,0.47
+"Wingham, ON",2.6,0.4,0.39,0.5
+"Woodstock, ON",1.9,0.4,0.34,0.44
+"Wyoming, ON",1.6,0.4,0.36,0.47
+"Charlottetown, PE",2.7,0.6,0.43,0.56
+"Souris, PE",2.7,0.6,0.45,0.58
+"Summerside, PE",3.1,0.6,0.47,0.6
+"Tignish, PE",3.2,0.6,0.51,0.66
+"Acton-Vale, QC",2.3,0.4,0.27,0.35
+"Alma, QC",3.3,0.4,0.27,0.35
+"Amos, QC",3.2,0.3,0.25,0.32
+"Ancienne-Lorette, QC",3.4,0.6,0.32,0.41
+"Asbestos, QC",2.8,0.6,0.27,0.35
+"Aylmer, QC",2.5,0.4,0.32,0.41
+"Baie-Comeau, QC",4.3,0.4,0.39,0.5
+"Baie-Saint-Paul, QC",3.2,0.6,0.37,0.48
+"Beaconsfield, QC",2.3,0.4,0.33,0.42
+"Beauport, QC",3.4,0.6,0.33,0.42
+"Bedford, QC",2.1,0.4,0.32,0.41
+"Beloeil, QC",2.4,0.4,0.29,0.37
+"Brome, QC",2.5,0.4,0.29,0.37
+"Brossard, QC",2.4,0.4,0.33,0.42
+"Buckingham, QC",2.6,0.4,0.31,0.4
+"Campbell's Bay, QC",2.6,0.4,0.25,0.32
+"Chambly, QC",2.3,0.4,0.31,0.4
+"Coaticook, QC",2.3,0.6,0.27,0.35
+"Contrecoeur, QC",2.8,0.4,0.33,0.43
+"Cowansville, QC",2.3,0.4,0.32,0.41
+"Deux-Montagnes, QC",2.4,0.4,0.29,0.37
+"Dolbeau, QC",3.5,0.3,0.27,0.35
+"Dorval, QC",2.4,0.4,0.33,0.42
+"Drummondville, QC",2.5,0.4,0.27,0.35
+"Farnham, QC",2.2,0.4,0.29,0.37
+"Fort-Coulonge, QC",2.5,0.4,0.25,0.32
+"Gagnon, QC",4.6,0.4,0.3,0.39
+"Gaspe, QC",4.3,0.6,0.37,0.48
+"Gatineau, QC",2.5,0.4,0.32,0.41
+"Gracefield, QC",2.6,0.4,0.25,0.32
+"Granby, QC",2.3,0.4,0.27,0.35
+"Harrington-Harbour, QC",4.9,0.6,0.56,0.72
+"Havre-51-Pierre, QC",4.1,0.6,0.48,0.63
+"Hemmingford, QC",2.4,0.4,0.31,0.4
+"Hull, QC",2.4,0.4,0.32,0.41
+"Joliette, QC",3.1,0.4,0.28,0.36
+"Kuujjuaq, QC",4.8,0.2,0.47,0.6
+"Kuujjuarapik, QC",4.5,0.3,0.43,0.55
+"La Pocatiere, QC",3.2,0.6,0.39,0.5
+"Lachute, QC",2.4,0.4,0.31,0.4
+"Lac-Megantic, QC",3.2,0.6,0.27,0.35
+"La-Malbaie, QC",3.1,0.6,0.37,0.48
+"La-Tuque, QC",3.4,0.4,0.27,0.35
+"Laval, QC",2.6,0.4,0.33,0.42
+"lberville, QC",2.2,0.4,0.32,0.41
+"Lennoxville, QC",2,0.6,0.25,0.32
+"Lery, QC",2.3,0.4,0.33,0.42
+"Levis, QC",3.3,0.6,0.32,0.41
+"lnukjuak, QC",4.4,0.2,0.47,0.6
+"Loretteville, QC",3.7,0.6,0.32,0.41
+"Louiseville, QC",2.9,0.4,0.33,0.43
+"Magog, QC",2.3,0.4,0.27,0.35
+"Malartic, QC",3.3,0.3,0.25,0.32
+"Maniwaki, QC",2.4,0.4,0.24,0.31
+"Masson, QC",2.4,0.4,0.31,0.4
+"Matane, QC",3.7,0.4,0.47,0.6
+"Mont-Joli, QC",4,0.4,0.4,0.52
+"Mont-Laurier, QC",2.6,0.4,0.23,0.3
+"Montmagny, QC",2.9,0.6,0.36,0.47
+"Montreal (City Hall), QC",2.6,0.4,0.33,0.42
+"Montreal-Est, QC",2.7,0.4,0.33,0.42
+"Montreal-Nord, QC",2.6,0.4,0.33,0.42
+"Nicolet (Gentilly), QC",2.8,0.4,0.33,0.42
+"Nitchequon, QC",3.5,0.3,0.29,0.37
+"Noranda, QC",3.2,0.3,0.27,0.35
+"Outremont, QC",2.8,0.4,0.33,0.42
+"Perce, QC",3.8,0.6,0.56,0.72
+"Pierrefonds, QC",2.4,0.4,0.33,0.42
+"Pincourt, QC",2.3,0.4,0.33,0.42
+"Plessisville, QC",2.8,0.6,0.27,0.35
+"Port-Cartier, QC",4.1,0.4,0.42,0.54
+"Puvirnituq, QC",4.5,0.2,0.47,0.6
+"Quebec, QC",3.6,0.6,0.32,0.41
+"Richmond, QC",2.2,0.6,0.25,0.32
+"Rimouski, QC",3.8,0.4,0.4,0.52
+"Riviere-du-Loup, QC",3.3,0.6,0.39,0.5
+"Roberval, QC",3.5,0.3,0.27,0.35
+"Rock·lsland, QC",2,0.4,0.27,0.35
+"Rosemere, QC",2.6,0.4,0.31,0.4
+"Rouyn, QC",3.1,0.3,0.27,0.35
+"Saguenay, QC",2.5,0.4,0.28,0.36
+"Saguenay (Bagotville), QC",2.4,0.4,0.29,0.38
+"Saguenay (Jonquiere), QC",3.1,0.4,0.27,0.35
+"Saguenay (Kenogami), QC",3.1,0.4,0.27,0.35
+"Saint·Jean·sur-Richelieu, QC",2.2,0.4,0.32,0.41
+"Saint-Eustache, QC",2.4,0.4,0.29,0.37
+"Saint-Hubert-de-Riviere-du-Loup, QC",4.4,0.6,0.31,0.4
+"Salaberry·de-Valleyfield, QC",2.3,0.4,0.33,0.42
+"Schefferville, QC",4.5,0.3,0.33,0.42
+"Senneterre, QC",3.3,0.3,0.25,0.32
+"Sept-iles, QC",4.1,0.4,0.42,0.54
+"Shawinigan, QC",3.1,0.4,0.27,0.35
+"Shawville, QC",2.8,0.4,0.27,0.35
+"Sherbrooke, QC",2.2,0.6,0.25,0.32
+"Sillery, QC",3.1,0.6,0.32,0.41
+"Sorel, QC",2.8,0.4,0.33,0.43
+"St·Georges·de·Cacouna, QC",3.2,0.6,0.39,0.5
+"Ste-Agathe-des-Monts, QC",3.4,0.4,0.27,0.35
+"Ste-Anne-de-Bellevue, QC",2.3,0.4,0.33,0.42
+"Ste-Foy, QC",3.7,0.6,0.32,0.41
+"St-Felicien, QC",3.5,0.3,0.27,0.35
+"St-Hubert, QC",2.5,0.4,0.33,0.42
+"St-Hyacinthe, QC",2.3,0.4,0.27,0.35
+"St-Jerome, QC",2.7,0.4,0.29,0.37
+"St-Jovite, QC",2.8,0.4,0.25,0.33
+"St-Lambert, QC",2.5,0.4,0.33,0.42
+"St-Laurent, QC",2.5,0.4,0.33,0.42
+"St-Lazare-Hudson, QC",2.3,0.4,0.33,0.42
+"St-Nicolas, QC",3.5,0.6,0.33,0.42
+"Sutton, QC",2.4,0.4,0.32,0.41
+"Tadoussac, QC",3.4,0.4,0.4,0.52
+"Temiscaming, QC",2.5,0.4,0.25,0.32
+"Terrebonne, QC",2.6,0.4,0.31,0.4
+"Thetford Mines, QC",3.3,0.6,0.27,0.35
+"Thurso, QC",2.4,0.4,0.31,0.4
+"Trois-Rivieres, QC",2.8,0.4,0.33,0.43
+"Val-d'Or, QC",3.4,0.3,0.25,0.32
+"Varennes, QC",2.6,0.4,0.31,0.4
+"Vercheres, QC",2.7,0.4,0.33,0.43
+"Verdun, QC",2.5,0.4,0.33,0.42
+"Victoriaville, QC",2.6,0.6,0.27,0.35
+"Ville-Marie, QC",2.3,0.4,0.31,0.4
+"Wakefield, QC",3.1,0.4,0.27,0.34
+"Waterloo, QC",2.5,0.4,0.27,0.35
+"Windsor, QC",2.3,0.4,0.25,0.32
+"Assiniboia, SK",1.6,0.1,0.38,0.49
+"Battrum, SK",1.2,0.1,0.42,0.54
+"Biggar, SK",2.1,0.1,0.35,0.45
+"Broadview, SK",1.7,0.1,0.36,0.46
+"Dafoe, SK",1.7,0.1,0.29,0.37
+"Dundurn, SK",1.5,0.1,0.36,0.46
+"Estevan, SK",1.6,0.1,0.4,0.52
+"Hudson Bay, SK",2,0.1,0.29,0.37
+"Humboldt, SK",2.1,0.1,0.3,0.39
+"Island Falls, SK",2.1,0.1,0.27,0.35
+"Kamsack, SK",2.1,0.2,0.31,0.4
+"Kindersley, SK",1.4,0.1,0.36,0.46
+"Lloydminster, SK",2,0.1,0.31,0.4
+"Maple Creek, SK",1.2,0.1,0.35,0.45
+"Meadow Lake, SK",1.7,0.1,0.31,0.4
+"Mellor!, SK",2.1,0.1,0.28,0.36
+"Melville, SK",1.7,0.1,0.31,0.4
+"Moose Jaw, SK",1.4,0.1,0.4,0.52
+"Nipawin, SK",2,0.1,0.29,0.38
+"North Battleford, SK",1.7,0.1,0.36,0.46
+"Prince Albert, SK",1.9,0.1,0.29,0.38
+"Qu'Appelle, SK",1.7,0.1,0.33,0.42
+"Regina, SK",1.4,0.1,0.38,0.49
+"Roselawn, SK",1.7,0.1,0.38,0.49
+"Saskatoon, SK",1.7,0.1,0.33,0.43
+"Scott, SK",1.9,0.1,0.35,0.45
+"Strasbourg, SK",1.5,0.1,0.33,0.42
+"Swift Current, SK",1.4,0.1,0.42,0.54
+"Uranium City, SK",2,0.1,0.28,0.36
+"Weyburn, SK",1.4,0.1,0.37,0.48
+"Yorkton, SK",1.7,0.1,0.31,0.4
+"Aishihik, YT",1.9,0.1,0.29,0.38
+"Dawson, YT",2.7,0.1,0.24,0.31
+"Destruction Bay, YT",1.6,0.1,0.47,0.6
+"Faro, YT",2.3,0.1,0.27,0.35
+"Haines Junction, YT",2.2,0.1,0.26,0.34
+"Snag, YT",2.2,0.1,0.24,0.31
+"Teslin, YT",2.9,0.1,0.26,0.34
+"Watson Lake, YT",3.1,0.1,0.27,0.35
+"Whitehorse, YT",1.8,0.1,0.29,0.38
