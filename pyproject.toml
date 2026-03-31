@@ -23,9 +23,11 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = ["pytest", "black", "ruff"]
+web = ["streamlit>=1.28.0"]
 
 [project.scripts]
 post-selector = "post_selector.cli:main"
+post-selector-web = "streamlit:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

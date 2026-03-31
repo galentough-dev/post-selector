@@ -7,9 +7,25 @@ Laminated Timber Post Capacity Calculator per NBCC-2010 and CSA O86-09.
 ```bash
 cd C:\Users\galen\post_selector
 pip install -e .
+pip install -e ".[web]"  # For web interface
 ```
 
-## Usage
+## Web Interface
+
+```bash
+# Launch clean, intuitive web UI
+streamlit run post_selector/app.py
+```
+
+Opens at http://localhost:8501
+
+Features:
+- City search and selection
+- Building parameter inputs
+- Post comparison table
+- Color-coded pass/fail results
+
+## CLI Usage
 
 ### CLI
 
