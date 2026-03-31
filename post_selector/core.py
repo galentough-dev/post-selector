@@ -101,12 +101,9 @@ def load_cities_from_csv(filepath: Optional[str] = None):
 
 def find_city(name: str) -> Optional[Tuple[str, float, float, float, float]]:
     """Find a city in the database by partial name match (case-insensitive)."""
-    if not _CITY_DB:
-        raise RuntimeError(
-            "City database not loaded. Call load_cities_from_csv() first."
-        )
+    city_db = get_city_db()
     name_lower = name.lower()
-    matches = [c for c in _CITY_DB if name_lower in c[0].lower()]
+    matches = [c for c in city_db if name_lower in c[0].lower()]
     if len(matches) == 1:
         return matches[0]
     elif len(matches) > 1:
