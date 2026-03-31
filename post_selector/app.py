@@ -1,5 +1,10 @@
 """Streamlit frontend for Post Selector."""
 
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import streamlit as st
 from post_selector import (
     run_calculation,
