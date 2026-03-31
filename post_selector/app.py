@@ -142,8 +142,44 @@ with st.sidebar:
 
     st.divider()
 
-    st.header("Options")
-    importance = st.selectbox("Importance", ["normal", "low", "high", "post_disaster"])
+    st.header("Building Type")
+
+    building_type = st.selectbox(
+        "Building Use",
+        [
+            "Agricultural (barn, equipment storage)",
+            "Residential (garage, shop)",
+            "Commercial (warehouse, retail)",
+            "Industrial (manufacturing)",
+            "Community (school, arena)",
+            "Post-disaster (fire hall, emergency)",
+        ],
+    )
+
+    type_to_importance = {
+        "Agricultural (barn, equipment storage)": "low",
+        "Residential (garage, shop)": "normal",
+        "Commercial (warehouse, retail)": "normal",
+        "Industrial (manufacturing)": "normal",
+        "Community (school, arena)": "high",
+        "Post-disaster (fire hall, emergency)": "post_disaster",
+    }
+
+    importance = type_to_importance.get(building_type, "normal")
+
+    importance_factors = {
+        "low": 0.8,
+        "normal": 1.0,
+        "high": 1.15,
+        "post_disaster": 1.25,
+    }
+    st.info(
+        f"Importance Factor: {importance_factors.get(importance, 1.0)} ({importance})"
+    )
+
+    st.divider()
+
+    st.header("Exposure")
     snow_exposure = st.selectbox(
         "Snow Exposure", ["sheltered", "exposed", "exposed_north"]
     )
