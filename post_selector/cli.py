@@ -3,17 +3,16 @@
 
 import argparse
 import sys
-import os
-from pathlib import Path
 
+from . import __version__
 from .core import (
     run_calculation,
-    ClimaticLoads,
     load_cities_from_csv,
-    find_city,
     run_validation,
     POST_DATABASE,
     get_city_db,
+    AmbiguousCityError,
+    CityNotFoundError,
 )
 
 
@@ -27,11 +26,14 @@ def list_cities(pattern=None):
 
     print(f"{'City':<35} {'Ss (kPa)':<12} {'Sr (kPa)':<12} {'q50 (kPa)':<12}")
     print("-" * 75)
-    for city in cities[:50]:  # Limit output
+    for city in cities[:50]:
         print(f"{city[0]:<35} {city[1]:<12.2f} {city[2]:<12.2f} {city[4]:<12.2f}")
 
     if len(cities) > 50:
         print(f"\n... and {len(cities) - 50} more. Use --city <pattern> to filter.")
+
+    if len(cities) == 0:
+        print("No cities found matching that pattern.")
 
 
 def list_regions():
@@ -61,7 +63,10 @@ Examples:
         """,
     )
 
-    # Information commands
+    parser.add_argument(
+        "--version", action="version", version=f"%(prog)s {__version__}"
+    )
+
     parser.add_argument("--validate", action="store_true", help="Run validation tests")
     parser.add_argument(
         "--list-posts", action="store_true", help="List available post sizes"
@@ -77,7 +82,6 @@ Examples:
         "--list-regions", action="store_true", help="List available provinces/regions"
     )
 
-    # City/region selection (required for calculation)
     parser.add_argument(
         "--city",
         type=str,
@@ -85,7 +89,6 @@ Examples:
         help="City name for NBCC climatic data (e.g., 'Edmonton' or 'Calgary, AB')",
     )
 
-    # Building parameters
     parser.add_argument("--width", type=float, default=32, help="Building width (ft)")
     parser.add_argument("--length", type=float, default=40, help="Building length (ft)")
     parser.add_argument("--height", type=float, default=12, help="Eave height (ft)")
@@ -93,13 +96,11 @@ Examples:
     parser.add_argument("--slope", type=float, default=4, help="Roof slope (x:12)")
     parser.add_argument("--dead", type=float, default=10, help="Dead load (psf)")
 
-    # Post selection
     parser.add_argument("--plies", type=int, default=4, help="Number of plies (3 or 4)")
     parser.add_argument(
         "--size", type=str, default="2x6", help="Post size (2x6 or 2x8)"
     )
 
-    # Importance category
     parser.add_argument(
         "--importance",
         type=str,
@@ -108,7 +109,6 @@ Examples:
         help="Importance category",
     )
 
-    # Exposure options
     parser.add_argument(
         "--snow-exposure",
         type=str,
@@ -126,14 +126,14 @@ Examples:
 
     args = parser.parse_args()
 
-    # Handle information commands
     if args.validate:
-        return run_validation()
+        run_validation()
+        return 0
 
     if args.list_posts:
         print("Available Posts:")
         print("-" * 60)
-        print(f"{'Post':<15} {'Mr (kN-m)':<12} {'fc (MPa)':<12} {'A (mm²)':<12}")
+        print(f"{'Post':<15} {'Mr (kN-m)':<12} {'fc (MPa)':<12} {'A (mm2)':<12}")
         print("-" * 60)
         for p in POST_DATABASE:
             print(
@@ -149,7 +149,6 @@ Examples:
         list_cities(args.list_cities if args.list_cities else None)
         return 0
 
-    # Run calculation
     if not args.city:
         print("Error: --city is required for calculations.")
         print("Use --list-cities to see available locations.")
@@ -157,20 +156,31 @@ Examples:
 
     load_cities_from_csv()
 
-    result = run_calculation(
-        city_name=args.city,
-        width_ft=args.width,
-        length_ft=args.length,
-        eave_height_ft=args.height,
-        post_spacing_ft=args.spacing,
-        roof_slope=args.slope,
-        dead_load_psf=args.dead,
-        importance=args.importance,
-        plies=args.plies,
-        size=args.size,
-        snow_exposure=args.snow_exposure,
-        wind_exposure=args.wind_exposure,
-    )
+    try:
+        result = run_calculation(
+            city_name=args.city,
+            width_ft=args.width,
+            length_ft=args.length,
+            eave_height_ft=args.height,
+            post_spacing_ft=args.spacing,
+            roof_slope=args.slope,
+            dead_load_psf=args.dead,
+            importance=args.importance,
+            plies=args.plies,
+            size=args.size,
+            snow_exposure=args.snow_exposure,
+            wind_exposure=args.wind_exposure,
+        )
+    except AmbiguousCityError as e:
+        print(f"Error: {e}")
+        print("Please be more specific. Matching cities:")
+        for m in e.matches:
+            print(f"  {m[0]}")
+        return 1
+    except CityNotFoundError as e:
+        print(f"Error: {e}")
+        print("Use --list-cities to see available locations.")
+        return 1
 
     print(result.summary())
     return 0 if result.capacity.is_ok else 1

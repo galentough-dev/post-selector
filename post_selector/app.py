@@ -1,10 +1,5 @@
 """Streamlit frontend for Post Selector."""
 
-import sys
-import os
-
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 import streamlit as st
 from post_selector import (
     run_calculation,
@@ -12,6 +7,8 @@ from post_selector import (
     get_city_db,
     POST_DATABASE,
     PSF_TO_KPA,
+    CityNotFoundError,
+    AmbiguousCityError,
 )
 
 st.set_page_config(
@@ -20,7 +17,6 @@ st.set_page_config(
     layout="wide",
 )
 
-# Custom CSS for clean look
 st.markdown(
     """
 <style>
@@ -66,7 +62,6 @@ st.markdown(
 )
 
 
-# Load city database
 @st.cache_resource
 def load_db():
     load_cities_from_csv()
@@ -75,32 +70,32 @@ def load_db():
 
 cities = load_db()
 
-# Header
 st.markdown('<p class="main-header">Post Selector</p>', unsafe_allow_html=True)
 st.markdown(
-    '<p class="sub-header">Laminated Timber Post Capacity Calculator — NBCC-2010, CSA O86-09</p>',
+    '<p class="sub-header">Laminated Timber Post Capacity Calculator - NBCC-2010, CSA O86-09</p>',
     unsafe_allow_html=True,
 )
 
-# Sidebar - Inputs
 with st.sidebar:
     st.header("Location")
 
-    # City selection with search
     city_names = [c[0] for c in cities]
     city_search = st.text_input("Search city", placeholder="Type to search...")
 
     if city_search:
         filtered = [c for c in city_names if city_search.lower() in c.lower()]
     else:
-        filtered = city_names[:20]
+        filtered = city_names[:50]
 
-    selected_city = st.selectbox(
-        "Select city", filtered if filtered else city_names[:20]
-    )
+    if not filtered:
+        st.warning("No cities found. Try a different search.")
+        selected_city = None
+    else:
+        selected_city = st.selectbox("Select city", filtered)
 
-    # Get climatic data for selected city
-    city_data = next((c for c in cities if c[0] == selected_city), None)
+    city_data = None
+    if selected_city:
+        city_data = next((c for c in cities if c[0] == selected_city), None)
 
     if city_data:
         col1, col2, col3 = st.columns(3)
@@ -124,11 +119,18 @@ with st.sidebar:
     with col2:
         length = st.number_input("Length (ft)", value=250, min_value=10, max_value=500)
         spacing = st.number_input(
-            "Post Spacing (ft)", value=8.0, min_value=2.0, max_value=12.0, step=0.5
+            "Post Spacing (ft)", value=4.0, min_value=2.0, max_value=12.0, step=0.5
         )
 
-    slope = st.slider("Roof Slope (x:12)", min_value=0, max_value=12, value=4)
-    dead_load = st.number_input("Dead Load (psf)", value=10, min_value=5, max_value=50)
+    slope = st.number_input(
+        "Roof Slope (x:12)",
+        value=4.0,
+        min_value=0.0,
+        max_value=12.0,
+        step=0.25,
+        format="%.2f",
+    )
+    dead_load = st.number_input("Dead Load (psf)", value=80, min_value=5, max_value=200)
 
     st.divider()
 
@@ -185,127 +187,136 @@ with st.sidebar:
     )
     wind_exposure = st.selectbox("Wind Exposure", ["exposed", "sheltered"])
 
-# Main content - Results
 col_left, col_right = st.columns([2, 1])
 
 with col_left:
-    # Run calculation
     if st.button("Calculate", type="primary", use_container_width=True):
-        result = run_calculation(
-            city_name=selected_city,
-            width_ft=width,
-            length_ft=length,
-            eave_height_ft=height,
-            post_spacing_ft=spacing,
-            roof_slope=slope,
-            dead_load_psf=dead_load,
-            plies=plies,
-            size=size,
-            importance=importance,
-            snow_exposure=snow_exposure,
-            wind_exposure=wind_exposure,
-        )
-
-        # Store in session state
-        st.session_state["result"] = result
-        st.session_state["calculated"] = True
-
-        # Result status
-        if result.capacity.is_ok:
-            st.markdown(
-                f'<div class="result-pass"><h2>✓ POST IS OK</h2></div>',
-                unsafe_allow_html=True,
-            )
+        if not selected_city:
+            st.error("Please select a city first.")
         else:
-            st.markdown(
-                f'<div class="result-fail"><h2>✗ POST IS INADEQUATE</h2></div>',
-                unsafe_allow_html=True,
-            )
-
-        # Code checks
-        st.subheader("Code Checks")
-        col1, col2 = st.columns(2)
-        with col1:
-            lc3_status = "✓ OK" if result.capacity.pass_LC3 else "✗ FAIL"
-            st.metric("LC3", f"{result.capacity.ratio_LC3:.4f}", lc3_status)
-        with col2:
-            lc5_status = "✓ OK" if result.capacity.pass_LC5 else "✗ FAIL"
-            st.metric("LC5", f"{result.capacity.ratio_LC5:.4f}", lc5_status)
-
-        # Loads
-        st.subheader("Factored Loads")
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.metric("Pf (LC3)", f"{result.loading.Pf_LC3:.2f} kN")
-        with col2:
-            st.metric("Pf (LC5)", f"{result.loading.Pf_LC5:.2f} kN")
-        with col3:
-            st.metric("Mf (LC5)", f"{result.loading.Mf_LC5:.3f} kN·m")
-
-        # Capacity
-        st.subheader("Post Capacity")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric("Pr", f"{result.capacity.Pr:.3f} kN")
-        with col2:
-            st.metric("Mr", f"{result.capacity.Mr:.3f} kN·m")
-
-        # Climatic data
-        with st.expander("Climatic Data"):
-            col1, col2 = st.columns(2)
-            with col1:
-                st.write("**Snow Load**")
-                st.write(
-                    f"Design: {result.snow.S_design:.3f} kPa ({result.snow.S_design * PSF_TO_KPA:.1f} psf)"
+            try:
+                result = run_calculation(
+                    city_name=selected_city,
+                    width_ft=width,
+                    length_ft=length,
+                    eave_height_ft=height,
+                    post_spacing_ft=spacing,
+                    roof_slope=slope,
+                    dead_load_psf=dead_load,
+                    plies=plies,
+                    size=size,
+                    importance=importance,
+                    snow_exposure=snow_exposure,
+                    wind_exposure=wind_exposure,
                 )
-            with col2:
-                st.write("**Wind Load**")
-                st.write(
-                    f"Wall: {result.wind.wall_wind_load:.4f} kPa ({result.wind.wall_wind_psf:.1f} psf)"
-                )
-                st.write(
-                    f"Roof: {result.wind.roof_wind_load:.4f} kPa ({result.wind.roof_wind_psf:.1f} psf)"
-                )
+
+                st.session_state["result"] = result
+                st.session_state["calculated"] = True
+
+                if result.capacity.is_ok:
+                    st.markdown(
+                        '<div class="result-pass"><h2>PASS - POST IS OK</h2></div>',
+                        unsafe_allow_html=True,
+                    )
+                else:
+                    st.markdown(
+                        '<div class="result-fail"><h2>FAIL - POST IS INADEQUATE</h2></div>',
+                        unsafe_allow_html=True,
+                    )
+
+                st.subheader("Code Checks")
+                col1, col2 = st.columns(2)
+                with col1:
+                    lc3_status = "OK" if result.capacity.pass_LC3 else "FAIL"
+                    st.metric("LC3", f"{result.capacity.ratio_LC3:.4f}", lc3_status)
+                with col2:
+                    lc5_status = "OK" if result.capacity.pass_LC5 else "FAIL"
+                    st.metric("LC5", f"{result.capacity.ratio_LC5:.4f}", lc5_status)
+
+                st.subheader("Factored Loads")
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("Pf (LC3)", f"{result.loading.Pf_LC3:.2f} kN")
+                with col2:
+                    st.metric("Pf (LC5)", f"{result.loading.Pf_LC5:.2f} kN")
+                with col3:
+                    st.metric("Mf (LC5)", f"{result.loading.Mf_LC5:.3f} kN-m")
+
+                st.subheader("Post Capacity")
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.metric("Pr", f"{result.capacity.Pr:.3f} kN")
+                with col2:
+                    st.metric("Mr", f"{result.capacity.Mr:.3f} kN-m")
+
+                with st.expander("Climatic Data"):
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.write("**Snow Load**")
+                        st.write(
+                            f"Design: {result.snow.S_design:.3f} kPa ({result.snow.S_design * PSF_TO_KPA:.1f} psf)"
+                        )
+                    with col2:
+                        st.write("**Wind Load**")
+                        st.write(
+                            f"Wall: {result.wind.wall_wind_load:.4f} kPa ({result.wind.wall_wind_psf:.1f} psf)"
+                        )
+                        st.write(
+                            f"Roof: {result.wind.roof_wind_load:.4f} kPa ({result.wind.roof_wind_psf:.1f} psf)"
+                        )
+
+            except (CityNotFoundError, AmbiguousCityError) as e:
+                st.error(f"City error: {e}")
+            except ValueError as e:
+                st.error(f"Input error: {e}")
 
 with col_right:
     st.subheader("Compare Posts")
 
     if st.button("Compare All Posts", use_container_width=True):
-        st.write("Finding max spacing for each post...")
+        if not selected_city:
+            st.error("Please select a city first.")
+        else:
+            st.write("Finding max spacing for each post...")
 
-        results = []
-        for post in POST_DATABASE:
-            # Find max spacing (binary search)
-            max_spacing = 0
-            for s in [2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]:
-                r = run_calculation(
-                    city_name=selected_city,
-                    width_ft=width,
-                    length_ft=length,
-                    eave_height_ft=height,
-                    post_spacing_ft=s,
-                    roof_slope=slope,
-                    dead_load_psf=dead_load,
-                    plies=post.plies,
-                    size=post.size,
-                    importance=importance,
-                    snow_exposure=snow_exposure,
-                    wind_exposure=wind_exposure,
+            results = []
+            for post in POST_DATABASE:
+                lo, hi = 2.0, 12.0
+                best = 0.0
+                for _ in range(20):
+                    mid = (lo + hi) / 2.0
+                    try:
+                        r = run_calculation(
+                            city_name=selected_city,
+                            width_ft=width,
+                            length_ft=length,
+                            eave_height_ft=height,
+                            post_spacing_ft=mid,
+                            roof_slope=slope,
+                            dead_load_psf=dead_load,
+                            plies=post.plies,
+                            size=post.size,
+                            importance=importance,
+                            snow_exposure=snow_exposure,
+                            wind_exposure=wind_exposure,
+                        )
+                        if r.capacity.is_ok:
+                            best = mid
+                            lo = mid
+                        else:
+                            hi = mid
+                    except Exception:
+                        hi = mid
+
+                results.append(
+                    {
+                        "Post": f"{post.plies}-ply {post.size}",
+                        "Max Spacing": f"{best:.1f} ft" if best > 0 else "N/A",
+                        "Mr (kN-m)": f"{post.Mr:.2f}",
+                    }
                 )
-                if r.capacity.is_ok:
-                    max_spacing = s
-                else:
-                    break
 
-            results.append(
-                {
-                    "Post": f"{post.plies}-ply {post.size}",
-                    "Max Spacing": f"{max_spacing} ft" if max_spacing > 0 else "N/A",
-                    "Mr": f"{post.Mr:.2f}",
-                }
-            )
-
-        st.table(results)
+            st.table(results)
 
     st.divider()
 

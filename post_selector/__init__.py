@@ -1,6 +1,8 @@
 """Post Selector - Laminated Timber Post Capacity Calculator"""
 
 from .core import (
+    CityNotFoundError,
+    AmbiguousCityError,
     ClimaticLoads,
     BuildingParams,
     PostProperties,
@@ -21,10 +23,17 @@ from .core import (
     run_validation,
     POST_DATABASE,
     PSF_TO_KPA,
+    FT_TO_M,
+    IN_TO_MM,
+    GIRT_SPACING_IN,
+    DEFAULT_EMBED_DEPTH_FT,
+    K_SPLICE,
 )
 
 __version__ = "1.0.0"
 __all__ = [
+    "CityNotFoundError",
+    "AmbiguousCityError",
     "ClimaticLoads",
     "BuildingParams",
     "PostProperties",
@@ -45,4 +54,9 @@ __all__ = [
     "run_validation",
     "POST_DATABASE",
     "PSF_TO_KPA",
+    "FT_TO_M",
+    "IN_TO_MM",
+    "GIRT_SPACING_IN",
+    "DEFAULT_EMBED_DEPTH_FT",
+    "K_SPLICE",
 ]

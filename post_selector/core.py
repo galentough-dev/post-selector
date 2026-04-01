@@ -15,14 +15,18 @@ References:
   - NDS AWC DA6 (post-frame bending model)
 """
 
-import math
-import json
-import sys
 import csv
-from dataclasses import dataclass, field
-from typing import Optional, Tuple
+import math
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional, Tuple, Union
 
 PSF_TO_KPA = 20.9
+FT_TO_M = 0.3048
+IN_TO_MM = 25.4
+GIRT_SPACING_IN = 24.0
+DEFAULT_EMBED_DEPTH_FT = 4.0
+K_SPLICE = 0.8
 
 _CITY_DB = []
 
@@ -47,7 +51,7 @@ class ClimaticLoads:
     def from_nbcc_city(cls, city_name: str, importance: str = "normal"):
         city = find_city(city_name)
         if city is None:
-            raise ValueError(f"City '{city_name}' not found in NBCC database")
+            raise CityNotFoundError(f"City '{city_name}' not found in NBCC database")
         label, Ss, Sr, q10, q50 = city
         q = q50 if importance in ("normal", "high", "post_disaster") else q10
         return cls(Ss=Ss, Sr=Sr, q=q, source=f"NBCC-2010 ({label})")
@@ -71,15 +75,13 @@ def load_cities_from_csv(filepath: Optional[str] = None):
     _CITY_DB = []
 
     if filepath is None:
-        import os
-
-        filepath = os.path.join(
-            os.path.dirname(__file__), "..", "data", "nbcc_c2_climatic_data.csv"
+        filepath = (
+            Path(__file__).resolve().parent.parent
+            / "data"
+            / "nbcc_c2_climatic_data.csv"
         )
 
     try:
-        import csv
-
         with open(filepath, "r", encoding="utf-8", newline="") as f:
             reader = csv.DictReader(f)
             for row in reader:
@@ -99,6 +101,19 @@ def load_cities_from_csv(filepath: Optional[str] = None):
         raise FileNotFoundError(f"Climatic data file not found: {filepath}")
 
 
+class CityNotFoundError(ValueError):
+    pass
+
+
+class AmbiguousCityError(ValueError):
+    def __init__(self, name: str, matches: list):
+        self.name = name
+        self.matches = matches
+        super().__init__(
+            f"Multiple cities match '{name}': {', '.join(m[0] for m in matches)}"
+        )
+
+
 def find_city(name: str) -> Optional[Tuple[str, float, float, float, float]]:
     """Find a city in the database by partial name match (case-insensitive)."""
     city_db = get_city_db()
@@ -110,10 +125,7 @@ def find_city(name: str) -> Optional[Tuple[str, float, float, float, float]]:
         exact = [c for c in matches if c[0].lower().startswith(name_lower)]
         if len(exact) == 1:
             return exact[0]
-        print(f"Multiple matches found for '{name}':")
-        for i, m in enumerate(matches):
-            print(f"  {i + 1}. {m[0]}")
-        return matches[0]
+        raise AmbiguousCityError(name, matches)
     return None
 
 
@@ -169,6 +181,24 @@ class BuildingParams:
     dead_load_psf: float
     importance: str = "normal"
 
+    VALID_IMPORTANCE = ("low", "normal", "high", "post_disaster")
+
+    def __post_init__(self):
+        if self.width_ft <= 0:
+            raise ValueError("width_ft must be positive")
+        if self.length_ft <= 0:
+            raise ValueError("length_ft must be positive")
+        if self.eave_height_ft <= 0:
+            raise ValueError("eave_height_ft must be positive")
+        if self.post_spacing_ft <= 0:
+            raise ValueError("post_spacing_ft must be positive")
+        if self.roof_slope < 0:
+            raise ValueError("roof_slope must be non-negative")
+        if self.dead_load_psf < 0:
+            raise ValueError("dead_load_psf must be non-negative")
+        if self.importance not in self.VALID_IMPORTANCE:
+            raise ValueError(f"importance must be one of {self.VALID_IMPORTANCE}")
+
     @property
     def importance_factor(self) -> float:
         factors = {"low": 0.8, "normal": 1.0, "high": 1.15, "post_disaster": 1.25}
@@ -176,19 +206,19 @@ class BuildingParams:
 
     @property
     def width_m(self) -> float:
-        return self.width_ft * 0.3048
+        return self.width_ft * FT_TO_M
 
     @property
     def length_m(self) -> float:
-        return self.length_ft * 0.3048
+        return self.length_ft * FT_TO_M
 
     @property
     def eave_height_m(self) -> float:
-        return self.eave_height_ft * 0.3048
+        return self.eave_height_ft * FT_TO_M
 
     @property
     def post_spacing_m(self) -> float:
-        return self.post_spacing_ft * 0.3048
+        return self.post_spacing_ft * FT_TO_M
 
     @property
     def slope_degrees(self) -> float:
@@ -204,7 +234,7 @@ class BuildingParams:
 
     @property
     def reference_height_m(self) -> float:
-        return self.reference_height_ft * 0.3048
+        return self.reference_height_ft * FT_TO_M
 
     @property
     def dead_load_kPa(self) -> float:
@@ -463,13 +493,12 @@ def calculate_loading(
     Mmax_base = 1.0 / 8.0 * wf * H_m**2
     Mx1 = 9.0 / 128.0 * wf * H_m**2
 
-    D_embed = 4.0 * 0.3048
+    D_embed = DEFAULT_EMBED_DEPTH_FT * FT_TO_M
     x3 = D_embed
     Mx3 = R1 * (H_m - x3) - wf * (H_m - x3) ** 2 / 2.0
     Mx4 = R1 * H_m - wf * H_m**2 / 2.0
 
-    K_splice = 0.8
-    Mf = K_splice * max(abs(Mmax_base), abs(Mx1), abs(Mx3), abs(Mx4))
+    Mf = K_SPLICE * max(abs(Mmax_base), abs(Mx1), abs(Mx3), abs(Mx4))
 
     Pf_LC3 = 1.25 * DL_kN + 1.5 * SL_kN + 0.4 * WLr_kN
     Pf_LC5 = 1.25 * DL_kN + 1.4 * WLr_kN + 0.5 * SL_kN
@@ -484,7 +513,7 @@ def calculate_loading(
         Mf_LC5=Mf,
         Mmax_base=Mmax_base,
         Mx1=Mx1,
-        K_splice=K_splice,
+        K_splice=K_SPLICE,
     )
 
 
@@ -535,7 +564,7 @@ def calculate_capacity(
 
     Fc = fc * KD * KH * KSc * KT
 
-    girt_spacing_mm = 24.0 * 25.4
+    girt_spacing_mm = GIRT_SPACING_IN * IN_TO_MM
 
     Ld = 11.0 / 10.0 * H_m * 1000.0
     Lb = girt_spacing_mm
@@ -695,6 +724,14 @@ def run_calculation(
     override_snow_psf=None,
     override_wind_psf=None,
 ) -> FullResult:
+    VALID_PLIES = (3, 4)
+    VALID_SIZES = ("2x6", "2x8")
+
+    if plies not in VALID_PLIES:
+        raise ValueError(f"plies must be one of {VALID_PLIES}")
+    if size not in VALID_SIZES:
+        raise ValueError(f"size must be one of {VALID_SIZES}")
+
     if city_name:
         climate = ClimaticLoads.from_nbcc_city(city_name, importance)
     elif us_snow_psf is not None and us_wind_mph is not None:
@@ -772,11 +809,11 @@ def run_validation():
     ok = True
     for name, calc, exp, unit in checks:
         pct = abs(calc - exp) / abs(exp) * 100 if exp else 0
-        s = "✓" if pct < 0.5 else "✗"
+        s = "OK" if pct < 0.5 else "FAIL"
         if pct >= 0.5:
             ok = False
         print(f"  {s} {name:20s}: {calc:12.6f} vs {exp:12.6f}  ({pct:.3f}%) {unit}")
-    print(f"\n  {'ALL CHECKS PASSED ✓' if ok else 'SOME CHECKS FAILED ✗'}")
+    print(f"\n  {'ALL CHECKS PASSED' if ok else 'SOME CHECKS FAILED'}")
     return ok
 
 
